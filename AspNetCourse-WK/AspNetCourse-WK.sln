@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{AF6A434B-C9C0-4BFF-BCC1-DE419E9676CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HairDresingAPI", "..\HairDresingAPI\HairDresingAPI.csproj", "{5FF065B5-B2F4-4D30-9EB4-826509D31383}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Helpers", "Helpers", "{0E67C2B8-F98B-463F-8159-EEBE9316F3B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityHelper", "..\EntityHelper\EntityHelper.csproj", "{BD13C829-0256-4325-9C62-230B35F2CB41}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{BC111BBE-F351-44B8-AF64-1BC2CE56E22A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "..\Domain\Domain.csproj", "{7F308051-EE10-4D9A-8AFE-09126DBF52C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationHelper", "..\ConfigurationHelper\ConfigurationHelper.csproj", "{4B1E6E64-E7CB-4B26-9C50-6AFF092D2CEB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5FF065B5-B2F4-4D30-9EB4-826509D31383}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FF065B5-B2F4-4D30-9EB4-826509D31383}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FF065B5-B2F4-4D30-9EB4-826509D31383}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FF065B5-B2F4-4D30-9EB4-826509D31383}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD13C829-0256-4325-9C62-230B35F2CB41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD13C829-0256-4325-9C62-230B35F2CB41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD13C829-0256-4325-9C62-230B35F2CB41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD13C829-0256-4325-9C62-230B35F2CB41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F308051-EE10-4D9A-8AFE-09126DBF52C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F308051-EE10-4D9A-8AFE-09126DBF52C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F308051-EE10-4D9A-8AFE-09126DBF52C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F308051-EE10-4D9A-8AFE-09126DBF52C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B1E6E64-E7CB-4B26-9C50-6AFF092D2CEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B1E6E64-E7CB-4B26-9C50-6AFF092D2CEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B1E6E64-E7CB-4B26-9C50-6AFF092D2CEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B1E6E64-E7CB-4B26-9C50-6AFF092D2CEB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5FF065B5-B2F4-4D30-9EB4-826509D31383} = {AF6A434B-C9C0-4BFF-BCC1-DE419E9676CC}
+		{BD13C829-0256-4325-9C62-230B35F2CB41} = {0E67C2B8-F98B-463F-8159-EEBE9316F3B1}
+		{7F308051-EE10-4D9A-8AFE-09126DBF52C2} = {BC111BBE-F351-44B8-AF64-1BC2CE56E22A}
+		{4B1E6E64-E7CB-4B26-9C50-6AFF092D2CEB} = {0E67C2B8-F98B-463F-8159-EEBE9316F3B1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3F364D3B-C79F-4FA5-AB42-F0E4DB07804B}
+	EndGlobalSection
+EndGlobal
