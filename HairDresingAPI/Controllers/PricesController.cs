@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Domain.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -31,6 +33,69 @@ namespace HairDresingAPI.Controllers
             {
                 return BadRequest(e.Message);
             }
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(int id)
+        {
+            var item = await repository.GetAsync(id);
+            if (item == null)
+            {
+                return NotFound();
+            }
+            return Ok(id);
+        }
+
+        //[HttpGet("{ok}")]
+        //[Route("get")]
+        //public async Task<IActionResult> Get(string ok)
+        //{
+        //    return Ok(true);
+        //}
+
+        [HttpPost]
+        public async Task<ActionResult<Price>> Post(Price item)
+        {
+            await repository.AddAsync(item);
+            await repository.SaveChangesAsync();
+            return CreatedAtAction(nameof(Get), new { id = item.Id }, item);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult> Put(int id, Price item)
+        {
+            if (id != item.Id)
+            {
+                return BadRequest();
+            }
+            await repository.UpdateAsync(item);
+            try
+            {
+                await repository.SaveChangesAsync();
+                return NoContent();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!repository.FindBy(a => a.Id == id).Any())
+                {
+                    return NotFound();
+                }
+                throw;
+            }
+            return NotFound();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<Price>> Delete(int id)
+        {
+            var item = await repository.GetAsync(id);
+            if(item == null)
+            {
+                return NotFound();
+            }
+            await repository.DeleteAsync(id);
+            await repository.SaveChangesAsync();
+            return Ok(item);
         }
     }
 }
