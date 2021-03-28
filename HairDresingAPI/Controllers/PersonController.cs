@@ -12,9 +12,9 @@ namespace HairDresingAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PricesController : SharedController<Price>
+    public class PersonController : SharedController<Person>
     {
-        public PricesController(IRepository<Price> repository) : base(repository)
+        public PersonController(IRepository<Person> repository) : base(repository)
         {
 
         }

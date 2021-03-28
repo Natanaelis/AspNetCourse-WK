@@ -1,4 +1,5 @@
 ﻿using Domain.Models;
+using EntityHelper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace Repositories.Interfaces
 {
-    public interface IPricesRepository
+    public interface IRepository<T> where T : Entity
     {
-        Task<int> AddAsync(Price item);
+        Task<T> GetAsync(int id);
+        Task<List<T>> GetListAsync();
+        Task<int> AddAsync(T item);
+        Task<bool> UpdateAsync(T item);
         Task<bool> DeleteAsync(int id);
         void Dispose();
-        IQueryable<Price> FindBy(Expression<Func<Price, bool>> predicate);
-        Task<Price> GetAsync(int id);
-        Task<List<Price>> GetListAsync();
+        IQueryable<T> FindBy(Expression<Func<T, bool>> predicate);
         Task SaveChangesAsync();
-        Task<bool> UpdateAsync(Price item);
     }
 }

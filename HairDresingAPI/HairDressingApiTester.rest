@@ -1,6 +1,38 @@
 @URL = http://localhost:55555/api
 
 ###
-
 GET {{URL}}/shared
 Content-Type: application/json
+
+###
+GET {{URL}}/prices
+Content-Type: application/json
+
+###
+GET {{URL}}/prices/1
+Content-Type: application/json
+
+
+###
+POST {{URL}}/prices
+Content-Type: application/json
+
+{
+    "id": 0,
+    "priceValue" : 15,
+    "currency" : "PLN"
+
+}
+
+###
+PUT {{URL}}/prices/1
+Content-Type: application/json
+{
+    "id": 1,
+    "priceValue" : 200,
+    "currency" : "PLN"
+
+}
+
+###
+DELETE {{URL}}/prices/2
