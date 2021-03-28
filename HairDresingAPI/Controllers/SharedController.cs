@@ -1,10 +1,10 @@
-﻿using Domain.Models;
-using Microsoft.AspNetCore.Http;
+﻿using ApiKeyAuth.Attributes;
+using Enums;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Repositories.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -12,6 +12,7 @@ namespace HairDresingAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+//    [KeyAuthorize(RoleType.Customer, RoleType.Employee)]
     public abstract class SharedController<T> : ControllerBase where T : EntityHelper.Entity
     {
         private readonly IRepository<T> repository;
@@ -22,6 +23,7 @@ namespace HairDresingAPI.Controllers
         }
 
         [HttpGet]
+//        [AllowAnonymous]
         public async Task<IActionResult> Get()
         {
             try
@@ -54,6 +56,8 @@ namespace HairDresingAPI.Controllers
         //}
 
         [HttpPost]
+        [KeyAuthorize(RoleType.Customer, RoleType.Employee)]
+
         public async Task<ActionResult<T>> Post(T item)
         {
             await repository.AddAsync(item);
@@ -62,6 +66,8 @@ namespace HairDresingAPI.Controllers
         }
 
         [HttpPut("{id}")]
+        [KeyAuthorize(RoleType.Employee)]
+
         public async Task<ActionResult> Put(int id, T item)
         {
             if (id != item.Id)
@@ -85,6 +91,8 @@ namespace HairDresingAPI.Controllers
         }
 
         [HttpDelete("{id}")]
+        [KeyAuthorize(RoleType.Employee)]
+
         public async Task<ActionResult<T>> Delete(int id)
         {
             var item = await repository.GetAsync(id);

@@ -9,6 +9,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AspNetCourse-WK\ApiKeyAuth\ApiKeyAuth.csproj" />
+    <ProjectReference Include="..\AspNetCourse-WK\Enums\Enums.csproj" />
+    <ProjectReference Include="..\AspNetCourse-WK\Logger\Logger.csproj" />
     <ProjectReference Include="..\Repositories\Repositories.csproj" />
   </ItemGroup>
 
